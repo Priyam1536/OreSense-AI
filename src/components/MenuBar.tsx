@@ -13,9 +13,12 @@ const MenuBar: React.FC<MenuBarProps> = ({ onMenuAction }) => {
       label: 'File',
       items: [
         { label: 'New Project', icon: FileText, action: 'new-project' },
+        { label: 'New Database', icon: Database, action: 'new-database' },
         { type: 'separator' },
         { label: 'Import Data', icon: Upload, action: 'import-data' },
         { label: 'Export Data', icon: Download, action: 'export-data' },
+        { type: 'separator' },
+        { label: 'Database Management', icon: Database, action: 'database-mgmt' },
         { type: 'separator' },
         { label: 'Exit', icon: LogOut, action: 'exit' }
       ]
@@ -36,6 +39,7 @@ const MenuBar: React.FC<MenuBarProps> = ({ onMenuAction }) => {
       label: 'View',
       items: [
         { label: 'Show Navigation', icon: Eye, action: 'show-navigation' },
+        { label: 'Show Console', icon: Eye, action: 'show-console' },
         { label: 'Show Results', icon: Eye, action: 'show-results' },
         { type: 'separator' },
         { label: 'Reset Layout', icon: RefreshCw, action: 'reset-layout' }
@@ -53,14 +57,17 @@ const MenuBar: React.FC<MenuBarProps> = ({ onMenuAction }) => {
       label: 'Run',
       items: [
         { label: 'LCA Calculation', icon: Calculator, action: 'run-lca' },
-        { label: 'Generate Report', icon: BarChart3, action: 'generate-report' }
+        { label: 'LCIA Calculation', icon: BarChart3, action: 'run-lcia' },
+        { label: 'Monte Carlo Analysis', icon: Shuffle, action: 'run-monte-carlo' },
+        { label: 'Parameter Variation', icon: TrendingUp, action: 'run-parameter' }
       ]
     },
     {
       label: 'Window',
       items: [
         { label: 'Modeling Perspective', icon: Window, action: 'perspective-modeling' },
-        { label: 'Analysis Perspective', icon: Window, action: 'perspective-analysis' }
+        { label: 'Analysis Perspective', icon: Window, action: 'perspective-analysis' },
+        { label: 'Database Perspective', icon: Window, action: 'perspective-database' }
       ]
     },
     {
