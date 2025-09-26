@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 
 interface LCAFormProps {
   onComplete: (data: any) => void;
@@ -86,14 +85,14 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 1:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Metal Information</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Metal Information</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Metal Type</label>
+              <label className="block text-sm font-medium text-black mb-2">Metal Type</label>
               <select
                 value={formData.metalType}
                 onChange={(e) => handleInputChange('metalType', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select metal type</option>
                 <option value="aluminum">Aluminum</option>
@@ -107,45 +106,45 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Mining Location / Region</label>
+              <label className="block text-sm font-medium text-black mb-2">Mining Location / Region</label>
               <input
                 type="text"
                 value={formData.miningLocation}
                 onChange={(e) => handleInputChange('miningLocation', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="e.g., Australia, Chile, Canada"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Ore Grade / Concentration (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">Ore Grade / Concentration (%)</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.oreGrade}
                 onChange={(e) => handleInputChange('oreGrade', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="e.g., 2.5"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Production Volume / Quantity</label>
+              <label className="block text-sm font-medium text-black mb-2">Production Volume / Quantity</label>
               <input
                 type="number"
                 value={formData.productionVolume}
                 onChange={(e) => handleInputChange('productionVolume', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="e.g., 1000"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Functional Unit</label>
+              <label className="block text-sm font-medium text-black mb-2">Functional Unit</label>
               <select
                 value={formData.functionalUnit}
                 onChange={(e) => handleInputChange('functionalUnit', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select functional unit</option>
                 <option value="kg">kg</option>
@@ -160,36 +159,36 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 2:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Mining & Ore Extraction</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Mining & Ore Extraction</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Energy Consumption in Mining (kWh)</label>
+              <label className="block text-sm font-medium text-black mb-2">Energy Consumption in Mining (diesel, electricity)</label>
               <input
                 type="number"
                 value={formData.energyConsumptionMining}
                 onChange={(e) => handleInputChange('energyConsumptionMining', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Total energy consumption"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Water Consumption in Mining (L)</label>
+              <label className="block text-sm font-medium text-black mb-2">Water Consumption in Mining</label>
               <input
                 type="number"
                 value={formData.waterConsumptionMining}
                 onChange={(e) => handleInputChange('waterConsumptionMining', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Total water consumption"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Emissions from Mining</label>
+              <label className="block text-sm font-medium text-black mb-2">Emissions from Mining (dust, particulates, methane)</label>
               <select
                 value={formData.emissionsMining}
                 onChange={(e) => handleInputChange('emissionsMining', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select emission type</option>
                 <option value="dust">Dust</option>
@@ -200,14 +199,14 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Land Use / Land Disturbance (hectares)</label>
+              <label className="block text-sm font-medium text-black mb-2">Land Use / Land Disturbance</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.landUse}
                 onChange={(e) => handleInputChange('landUse', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Area affected"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Area affected (hectares)"
               />
             </div>
           </div>
@@ -216,25 +215,25 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 3:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Processing & Energy</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Processing & Energy</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Transport from Mine to Processing Facility (km)</label>
+              <label className="block text-sm font-medium text-black mb-2">Transport from Mine to Processing Facility</label>
               <input
                 type="number"
                 value={formData.transportToProcessing}
                 onChange={(e) => handleInputChange('transportToProcessing', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Distance in kilometers"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Energy Source & Mix</label>
+              <label className="block text-sm font-medium text-black mb-2">Energy Source & Mix (grid, renewables, coal, etc.)</label>
               <select
                 value={formData.energySource}
                 onChange={(e) => handleInputChange('energySource', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select energy source</option>
                 <option value="grid">Grid electricity</option>
@@ -246,22 +245,22 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Energy Consumption in Processing (kWh)</label>
+              <label className="block text-sm font-medium text-black mb-2">Energy Consumption in Smelting / Refining</label>
               <input
                 type="number"
                 value={formData.energyConsumptionProcessing}
                 onChange={(e) => handleInputChange('energyConsumptionProcessing', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Energy for smelting/refining"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Energy for processing"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Type of Processing Route</label>
+              <label className="block text-sm font-medium text-black mb-2">Type of Processing Route (primary vs recycled)</label>
               <select
                 value={formData.processingRoute}
                 onChange={(e) => handleInputChange('processingRoute', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select processing route</option>
                 <option value="primary">Primary production</option>
@@ -271,7 +270,7 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">% of Recycled Input / Scrap Rate (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">% of Recycled Input / Scrap Rate</label>
               <input
                 type="number"
                 step="0.1"
@@ -279,24 +278,24 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
                 max="100"
                 value={formData.recycledInputRate}
                 onChange={(e) => handleInputChange('recycledInputRate', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="e.g., 25.5"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Chemical Inputs / Reagents / Fluxes</label>
+              <label className="block text-sm font-medium text-black mb-2">Chemical Inputs / Reagents / Fluxes</label>
               <input
                 type="text"
                 value={formData.chemicalInputs}
                 onChange={(e) => handleInputChange('chemicalInputs', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="List main chemicals used"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Recovery Rate (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">Losses / Inefficiencies / Yield (recovery rate)</label>
               <input
                 type="number"
                 step="0.1"
@@ -304,7 +303,7 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
                 max="100"
                 value={formData.recoveryRate}
                 onChange={(e) => handleInputChange('recoveryRate', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="e.g., 95.2"
               />
             </div>
@@ -314,25 +313,25 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 4:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Transport & Supply Chain</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Transport & Supply Chain</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Transport Distances (km)</label>
+              <label className="block text-sm font-medium text-black mb-2">Transport Distances & Mode (all stages)</label>
               <input
                 type="number"
                 value={formData.transportDistances}
                 onChange={(e) => handleInputChange('transportDistances', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Total transport distance"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Total transport distance (km)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Transport Mode</label>
+              <label className="block text-sm font-medium text-black mb-2">Transport Mode</label>
               <select
                 value={formData.transportMode}
                 onChange={(e) => handleInputChange('transportMode', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select transport mode</option>
                 <option value="truck">Truck</option>
@@ -344,12 +343,12 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Packaging & Shipping</label>
+              <label className="block text-sm font-medium text-black mb-2">Packaging & Shipping (if relevant)</label>
               <input
                 type="text"
                 value={formData.packaging}
                 onChange={(e) => handleInputChange('packaging', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Describe packaging materials and methods"
               />
             </div>
@@ -359,16 +358,16 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 5:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Use Phase</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Use Phase (if applicable)</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Expected Product Lifetime (years)</label>
+              <label className="block text-sm font-medium text-black mb-2">Expected Product Lifetime</label>
               <input
                 type="number"
                 value={formData.productLifetime}
                 onChange={(e) => handleInputChange('productLifetime', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., 25"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="e.g., 25 years"
               />
             </div>
 
@@ -383,10 +382,10 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 6:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">End-of-Life / Circularity</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">End-of-Life / Circularity</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Reuse / Repurposing Rate (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">Reuse / Repurposing Rate</label>
               <input
                 type="number"
                 step="0.1"
@@ -394,13 +393,13 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
                 max="100"
                 value={formData.reuseRate}
                 onChange={(e) => handleInputChange('reuseRate', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., 15.0"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="e.g., 15.0 (%)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Recycling Rate (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">Recycling Rate</label>
               <input
                 type="number"
                 step="0.1"
@@ -408,13 +407,13 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
                 max="100"
                 value={formData.recyclingRate}
                 onChange={(e) => handleInputChange('recyclingRate', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., 75.0"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="e.g., 75.0 (%)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Recycling Efficiency (%)</label>
+              <label className="block text-sm font-medium text-black mb-2">Recycling Efficiency</label>
               <input
                 type="number"
                 step="0.1"
@@ -422,17 +421,17 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
                 max="100"
                 value={formData.recyclingEfficiency}
                 onChange={(e) => handleInputChange('recyclingEfficiency', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., 90.0"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="e.g., 90.0 (%)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Disposal Route / Waste Treatment</label>
+              <label className="block text-sm font-medium text-black mb-2">Disposal Route / Waste Treatment</label>
               <select
                 value={formData.disposalRoute}
                 onChange={(e) => handleInputChange('disposalRoute', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
               >
                 <option value="">Select disposal method</option>
                 <option value="landfill">Landfill</option>
@@ -444,13 +443,13 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Transport for Disposal / Recycling (km)</label>
+              <label className="block text-sm font-medium text-black mb-2">Transport for Disposal / Recycling</label>
               <input
                 type="number"
                 value={formData.transportDisposal}
                 onChange={(e) => handleInputChange('transportDisposal', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Distance to disposal/recycling facility"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Distance to disposal/recycling facility (km)"
               />
             </div>
           </div>
@@ -459,86 +458,86 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       case 7:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Impact Metrics</h2>
+            <h2 className="text-2xl font-bold text-black mb-6">Impact Metrics</h2>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Global Warming Potential (kg CO₂-eq)</label>
+              <label className="block text-sm font-medium text-black mb-2">Global Warming Potential (CO₂-eq)</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.globalWarmingPotential}
                 onChange={(e) => handleInputChange('globalWarmingPotential', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., 12.45"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="e.g., 12.45 kg CO₂-eq"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Acidification, Eutrophication, POCP</label>
+              <label className="block text-sm font-medium text-black mb-2">Acidification, Eutrophication, POCP etc.</label>
               <input
                 type="text"
                 value={formData.acidification}
                 onChange={(e) => handleInputChange('acidification', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Describe impact values"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Water Consumption / Water Footprint (L)</label>
+              <label className="block text-sm font-medium text-black mb-2">Water Consumption / Water Footprint</label>
               <input
                 type="number"
                 value={formData.waterConsumption}
                 onChange={(e) => handleInputChange('waterConsumption', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Total water footprint"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Total water footprint (L)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Energy Demand (MJ)</label>
+              <label className="block text-sm font-medium text-black mb-2">Energy Demand (primary/non-renewable + renewable)</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.energyDemand}
                 onChange={(e) => handleInputChange('energyDemand', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Primary + renewable energy"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Energy demand (MJ)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Waste Generated (kg)</label>
+              <label className="block text-sm font-medium text-black mb-2">Waste Generated (solid, liquid, chemical)</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.wasteGenerated}
                 onChange={(e) => handleInputChange('wasteGenerated', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Solid, liquid, chemical waste"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Waste generated (kg)"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Air / Water Emissions</label>
+              <label className="block text-sm font-medium text-black mb-2">Air / Water Emissions (specific pollutants)</label>
               <input
                 type="text"
                 value={formData.airEmissions}
                 onChange={(e) => handleInputChange('airEmissions', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
                 placeholder="Specific pollutants"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">Land Use Change / Habitat Loss (hectares)</label>
+              <label className="block text-sm font-medium text-black mb-2">Land Use Change / Habitat Loss</label>
               <input
                 type="number"
                 step="0.01"
                 value={formData.landUseChange}
                 onChange={(e) => handleInputChange('landUseChange', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Area of habitat affected"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-black"
+                placeholder="Area of habitat affected (hectares)"
               />
             </div>
           </div>
@@ -554,10 +553,10 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
       <div className="max-w-2xl mx-auto py-8 px-4">
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm text-gray-600">Step {currentStep} of {totalSteps}</p>
+            <p className="text-sm text-black">Step {currentStep} of {totalSteps}</p>
             <button
               onClick={onCancel}
-              className="text-gray-500 hover:text-gray-700"
+              className="text-black hover:text-gray-700"
             >
               Cancel
             </button>
@@ -579,20 +578,18 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
             className={`px-6 py-2 rounded-lg font-medium transition-colors ${
               currentStep === 1
                 ? 'text-gray-400 cursor-not-allowed'
-                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                : 'text-black hover:text-gray-700 hover:bg-gray-100'
             }`}
           >
-            <ArrowLeft className="h-4 w-4 inline mr-2" />
             Previous
           </button>
 
           {currentStep === totalSteps ? (
             <button
               onClick={handleSubmit}
-              className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200 flex items-center space-x-2"
+              className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200"
             >
-              <CheckCircle className="h-4 w-4" />
-              <span>Complete Assessment</span>
+              Complete Assessment
             </button>
           ) : (
             <button
@@ -600,7 +597,6 @@ const LCAForm: React.FC<LCAFormProps> = ({ onComplete, onCancel }) => {
               className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-green-700 transition-all duration-200"
             >
               Next
-              <ArrowRight className="h-4 w-4 inline ml-2" />
             </button>
           )}
         </div>
